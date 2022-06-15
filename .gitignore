@@ -53,3 +53,4 @@ local_files
 *.tfvars
 *tfstate*
 !.terraform.lock.hcl
+tflint-ruleset-*
