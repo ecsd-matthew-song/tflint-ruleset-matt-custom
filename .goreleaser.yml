@@ -9,7 +9,6 @@ builds:
       - linux_386
       - linux_amd64
       - linux_arm
-      - linux_arm64
       - windows_386
       - windows_amd64
 archives:
@@ -20,6 +19,10 @@ archives:
       - none*
 checksum:
   name_template: 'checksums.txt'
-signs:
-  - artifacts: checksum
-    args: ["--batch", "-u", "{{ .Env.GPG_FINGERPRINT }}", "--output", "${signature}", "--detach-sign", "${artifact}"]
+release:
+  github:
+    owner: terraform-linters
+    name: tflint-ruleset-matt-custom
+  draft: true
+snapshot:
+  name_template: "{{ .Tag }}-dev"
