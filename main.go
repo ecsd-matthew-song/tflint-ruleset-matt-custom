@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/terraform-linters/tflint-plugin-sdk/plugin"
 	"github.com/terraform-linters/tflint-plugin-sdk/tflint"
-	"https://github.com/ecsd-matthew-song/tflint-ruleset-matt-custom/rules"
+	"github.com/ecsd-matthew-song/tflint-ruleset-matt-custom/rules"
 )
 
 func main() {
@@ -12,7 +12,8 @@ func main() {
 			Name:    "matt-custom",
 			Version: "0.1.0",
 			Rules: []tflint.Rule{
-				rules.NewTerraformCustomisedModuleStructureRule(),
+				rules.NewAzurermResourceMissingTagsRule(),
+				rules.NewAzurermStorageAccountInvalidAccountTierRule(),
 			},
 		},
 	})

@@ -1,9 +1,10 @@
-module github.com/terraform-linters/tflint-ruleset-template
+module github.com/ecsd-matthew-song/tflint-ruleset-matt-custom
 
 go 1.18
 
 require (
 	github.com/hashicorp/hcl/v2 v2.12.0
+	github.com/terraform-linters/tflint v0.36.2
 	github.com/terraform-linters/tflint-plugin-sdk v0.11.0
 )
 
@@ -45,7 +46,6 @@ require (
 	github.com/mitchellh/go-wordwrap v1.0.0 // indirect
 	github.com/oklog/run v1.0.0 // indirect
 	github.com/spf13/afero v1.8.2 // indirect
-	github.com/terraform-linters/tflint v0.36.2 // indirect
 	github.com/terraform-linters/tflint-ruleset-aws v0.13.4 // indirect
 	github.com/ulikunitz/xz v0.5.8 // indirect
 	github.com/vmihailenco/msgpack/v4 v4.3.12 // indirect

@@ -1,7 +1,21 @@
-# TFLint Ruleset Template
-[![Build Status](https://github.com/terraform-linters/tflint-ruleset-template/workflows/build/badge.svg?branch=main)](https://github.com/terraform-linters/tflint-ruleset-template/actions)
+# tflint-ruleset-matt-custom
 
-This is a template repository for building a custom ruleset. You can create a plugin repository from "Use this template". See also [Writing Plugins](https://github.com/terraform-linters/tflint/blob/master/docs/developer-guide/plugins.md).
+This is a custom ruleset based on the [template repository](https://github.com/terraform-linters/tflint-ruleset-template). For additional reference, See also [Writing Plugins](https://github.com/terraform-linters/tflint/blob/master/docs/developer-guide/plugins.md).
+
+## Rules
+
+|Name|Description|Severity|Enabled|Link|
+| --- | --- | --- | --- | --- |
+|azurerm_storage_account_invalid_account_tier|Rule that checks if the account tier value passed in valid.|ERROR|||
+|azurerm_resource_missing_tags|Checks against a list of resources to see if there are tags assigned to it|WARNING|||
+
+## white_list_template.go.tpl
+
+This template file can be used to generate rules that checks a resource against a list of values and throws errors if the values do not match exactly.
+
+The placeholder array `whitelist_name` is the array of values the code checks against for valid data.
+
+This template can also be modified to work as a blacklist as well by ensuring the values checked DO NOT match a value or to see if the string contains a substring that is blacklisted.
 
 ## Requirements
 
@@ -28,15 +42,6 @@ plugin "template" {
   KEY
 }
 ```
-
-## Rules
-
-|Name|Description|Severity|Enabled|Link|
-| --- | --- | --- | --- | --- |
-|aws_instance_example_type|Example rule for accessing and evaluating top-level attributes|ERROR|✔||
-|aws_s3_bucket_example_lifecycle_rule|Example rule for accessing top-level/nested blocks and attributes under the blocks|ERROR|✔||
-|google_compute_ssl_policy|Example rule with a custom rule config|WARNING|✔||
-|terraform_backend_type|Example rule for accessing other than resources|ERROR|✔||
 
 ## Building the plugin
 
